@@ -42,75 +42,50 @@ fn evaluate(secret:Vec<Color>, proposal:Vec<Color>) -> Vec<i32> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+    
     #[test]
     fn evaluate_b_b_1_0() {
-      use Color;
-      use evaluate;
-
       assert_eq!(evaluate(vec!(Color::BLUE), vec!(Color::BLUE)), vec!(1,0));
     }
 
     #[test]
     fn evaluate_r_b_0_0() {
-      use Color;
-      use evaluate;
-
       assert_eq!(evaluate(vec!(Color::RED), vec!(Color::BLUE)), vec!(0,0));
     }
 
     #[test]
     fn evaluate_br_br_2_0() {
-      use Color;
-      use evaluate;
-
       assert_eq!(evaluate(vec!(Color::BLUE, Color::RED), vec!(Color::BLUE, Color::RED)), vec!(2,0));
     }
 
     #[test]
     fn evaluate_rb_br_0_2() {
-      use Color;
-      use evaluate;
-
       assert_eq!(evaluate(vec!(Color::RED, Color::BLUE), vec!(Color::BLUE, Color::RED)), vec!(0,2));
     }
 
     #[test]
     fn evaluate_rrb_brb_2_1() {
-      use Color;
-      use evaluate;
-
       assert_eq!(evaluate(vec!(Color::RED, Color::RED, Color::BLUE), vec!(Color::BLUE, Color::RED, Color::BLUE)), vec!(2,1));
     }
 
     #[test]
     fn evaluate_rrb_bbb_1_0() {
-      use Color;
-      use evaluate;
-
       assert_eq!(evaluate(vec!(Color::RED, Color::RED, Color::BLUE), vec!(Color::BLUE, Color::BLUE, Color::BLUE)), vec!(1,0));
     }
 
     #[test]
-    fn evaluate_rrb_bbr_2_0() {
-      use Color;
-      use evaluate;
-
+    fn evaluate_rrb_bbr_0_2() {
       assert_eq!(evaluate(vec!(Color::RED, Color::RED, Color::BLUE), vec!(Color::BLUE, Color::BLUE, Color::RED)), vec!(0,2));
     }
 
     #[test]
     fn evaluate_bryg_byrb_1_2() {
-      use Color;
-      use evaluate;
-
       assert_eq!(evaluate(vec!(Color::BLUE, Color::RED, Color::YELLOW, Color::GREEN), vec!(Color::BLUE, Color::YELLOW, Color::RED, Color::BLUE)), vec!(1,2));
     }
 
     #[test]
     fn evaluate_bryy_yyrb_0_4() {
-      use Color;
-      use evaluate;
-
       assert_eq!(evaluate(vec!(Color::BLUE, Color::RED, Color::YELLOW, Color::YELLOW), vec!(Color::YELLOW, Color::YELLOW, Color::RED, Color::BLUE)), vec!(0,4));
     }
 }
