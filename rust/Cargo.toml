@@ -1,0 +1,5 @@
+[package]
+
+name = "mastermind"
+version = "0.0.1"
+authors = [ "Logan HAUSPIE <logan.hauspie.pro@gmail.com>" ]
