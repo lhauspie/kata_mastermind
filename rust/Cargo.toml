@@ -1,5 +1,12 @@
 [package]
-
 name = "mastermind"
 version = "0.0.1"
 authors = [ "Logan HAUSPIE <logan.hauspie.pro@gmail.com>" ]
+
+[dependencies]
+bencher = "0.1.5"
+
+# see https://docs.rs/bencher/0.1.5/bencher/ for more details
+[[bench]]
+name = "bench"
+harness = false
